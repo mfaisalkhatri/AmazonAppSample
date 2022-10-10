@@ -19,16 +19,23 @@ public class MainPage {
         return getDriver ().findElement (By.id ("nav-search-submit-button"));
     }
 
-    public String mobilePhoneTitle () {
-        return getDriver ().findElement (By.cssSelector ("div[data-component-type=\"s-search-result\"] h2")).getText ();
+    public WebElement mobilePhoneTitle () {
+        return getDriver ().findElement (By.cssSelector ("div[data-component-type=\"s-search-result\"] h2"));
+    }
+    public String getMobilePhoneTitle () {
+        return mobilePhoneTitle ().getText ();
     }
 
-    public String mobilePhonePrice () {
+    public String getMobilePhonePrice () {
         return getDriver ().findElement (By.cssSelector ("div[data-component-type=\"s-search-result\"] span.a-price-whole")).getText ();
     }
 
     public void searchForProduct(String productName) {
         searchBox ().sendKeys (productName);
         searchButton ().click ();
+    }
+
+    public void clickOnFirstSearchResult() {
+        mobilePhoneTitle ().click ();
     }
 }
