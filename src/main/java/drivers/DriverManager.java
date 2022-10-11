@@ -23,6 +23,7 @@ public class DriverManager {
     public static void createChromeDriver () {
         setupChromeDriver ();
         setupBrowserTimeouts ();
+        maximizeBrowserWindow ();
     }
 
     public static <D extends WebDriver> D getDriver () {
@@ -54,6 +55,12 @@ public class DriverManager {
             .scriptTimeout (Duration.ofSeconds (30));
     }
 
+    private static void maximizeBrowserWindow () {
+        getDriver ().manage ()
+            .window ()
+            .maximize ();
+    }
+
     private static void setupChromeDriver () {
         LOG.info ("Setting up Chrome Driver....");
         final boolean isHeadless = Boolean.parseBoolean (
@@ -67,7 +74,6 @@ public class DriverManager {
         final ChromeOptions options = new ChromeOptions ();
         options.addArguments ("--no-sandbox");
         options.addArguments ("--disable-dev-shm-usage");
-        options.addArguments ("--window-size=1050,600");
         if (isHeadless) {
             options.addArguments ("--headless");
         }
@@ -78,33 +84,6 @@ public class DriverManager {
             .capabilities (options)
             .create ());
         LOG.info ("Chrome Driver created successfully!");
-    }
-
-    private static void setupEdgeDriver () {
-        LOG.info ("Setting up Edge Driver....");
-        setDriver (WebDriverManager.edgedriver ()
-            .create ());
-        LOG.info ("Edge Driver created successfully!");
-    }
-
-    private static void setupFirefoxDriver () {
-        LOG.info ("Setting up Firefox Driver....");
-        final FirefoxOptions options = new FirefoxOptions ();
-        options.addArguments ("--no-sandbox");
-        options.addArguments ("--disable-dev-shm-usage");
-        options.addArguments ("--window-size=1050,600");
-        options.addArguments ("--headless");
-        setDriver (WebDriverManager.firefoxdriver ()
-            .capabilities (options)
-            .create ());
-        LOG.info ("Firefox Driver created successfully!");
-    }
-
-    private static void setupOperaDriver () {
-        LOG.info ("Setting up Opera Driver....");
-        setDriver (WebDriverManager.operadriver ()
-            .create ());
-        LOG.info ("Opera Driver created successfully!");
     }
 
     private DriverManager () {
