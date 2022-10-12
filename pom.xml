@@ -13,8 +13,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <log4jcore.version>2.19.0</log4jcore.version>
         <log4japi.version>2.19.0</log4japi.version>
+        <cucumber-bom-version>7.5.0</cucumber-bom-version>
+        <junit-bom-version>5.9.0</junit-bom-version>
+        <selenium-java-version>4.5.0</selenium-java-version>
+        <appium-java-client-version>8.2.0</appium-java-client-version>
+        <lombok-version>1.18.24</lombok-version>
+        <cucumber-junit-version>7.8.1</cucumber-junit-version>
         <maven.compiler.version>3.10.1</maven.compiler.version>
         <java.release.version>11</java.release.version>
+        <maven-surefire-version>3.0.0-M7</maven-surefire-version>
         <maven.source.encoding>UTF-8</maven.source.encoding>
     </properties>
 
@@ -23,14 +30,14 @@
             <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-bom</artifactId>
-                <version>7.5.0</version>
+                <version>${cucumber-bom-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.9.0</version>
+                <version>${junit-bom-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -65,13 +72,13 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.5.0</version>
+            <version>${selenium-java-version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>8.2.0</version>
+            <version>${appium-java-client-version}</version>
         </dependency>
 
         <dependency>
@@ -95,14 +102,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>${lombok-version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.8.1</version>
+            <version>${cucumber-junit-version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -123,7 +130,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${maven-surefire-version}</version>
             </plugin>
         </plugins>
     </build>

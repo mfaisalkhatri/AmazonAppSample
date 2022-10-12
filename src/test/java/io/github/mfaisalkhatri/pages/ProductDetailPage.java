@@ -40,4 +40,7 @@ public class ProductDetailPage {
     public void openShoppingCart () {
         cartButton ().click ();
     }
+
+
+
 }

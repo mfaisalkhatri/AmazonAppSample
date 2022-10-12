@@ -1,6 +1,6 @@
-@android
 Feature: Search product and add to cart
 
+  @web @android
   Scenario: Search for the product
     Given I search for "Samsung Galaxy S20" Mobile
     When I click on first search result

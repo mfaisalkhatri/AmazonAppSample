@@ -3,7 +3,14 @@ package io.github.mfaisalkhatri.pages;
 import static drivers.DriverManager.getDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
+import drivers.DriverManager;
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,6 +25,21 @@ public class MainPage {
     public static MainPage mainPage() {
         return new MainPage ();
     }
+
+//    public Map<String,By> pageTitle () {
+//        Map<String, By> pageTitleWebelements = new HashMap<> ();
+//        pageTitleWebelements.put ("Web", By.id ("pageTitle"));
+//        pageTitleWebelements.put ("android", AppiumBy.accessibilityId ("pageTitle"));
+//        return pageTitleWebelements;
+//    }
+//    public void getPageTitle () {
+//        if(DriverManager.getPlatform ().equals ("web")) {
+//            getDriver ().findElement (pageTitle ().get ("Web")).getText ();
+//        } else {
+//            getDriver ().findElement (pageTitle ().get ("android")).getText ();
+//        }
+//    }
+
     public WebElement searchBox () {
         return getDriver ().findElement (By.id ("twotabsearchtextbox"));
     }
