@@ -30,23 +30,23 @@ public class DriverManager {
     private static       AppiumDriverLocalService service;
     private static final String APP_PATH = System.getProperty (
         "user.dir") + "\\src\\test\\resources\\app\\amazon.apk";
-    private static       String platform;
+   // private static       String platform;
 
     public static void createChromeDriver () {
         setupChromeDriver ();
         setupBrowserTimeouts ();
         maximizeBrowserWindow ();
-        platform = "web";
+      //  platform = "web";
     }
 
-    public static String getPlatform () {
-            return platform;
-    }
+//   public static String getPlatform () {
+//            return platform;
+//    }
     public static void createAndroidDriver () {
         startServer ();
         DRIVER.set (new AndroidDriver (service.getUrl (), setCapabilities ()));
         setupDriverTimeouts ();
-        platform = "mobile";
+     //   platform = "mobile";
     }
 
     public static <D extends WebDriver> D getDriver () {
@@ -141,9 +141,6 @@ public class DriverManager {
         AppiumServiceBuilder builder = new AppiumServiceBuilder ();
         builder.withIPAddress ("127.0.0.1")
             .usingPort (4723)
-//            .withAppiumJS (
-//                new File ("C:\\Users\\Faisal Khatri\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-//            .usingDriverExecutable (new File ("E:\\Program Files\\node.exe"))
             .withArgument (BASEPATH, "/wd/hub")
             .withArgument (GeneralServerFlag.SESSION_OVERRIDE)
             .withArgument (GeneralServerFlag.LOG_LEVEL, "debug");

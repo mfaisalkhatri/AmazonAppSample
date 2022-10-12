@@ -28,15 +28,15 @@ public class MainPage {
 
 //    public Map<String,By> pageTitle () {
 //        Map<String, By> pageTitleWebelements = new HashMap<> ();
-//        pageTitleWebelements.put ("Web", By.id ("pageTitle"));
+//        pageTitleWebelements.put ("web", By.id ("pageTitle"));
 //        pageTitleWebelements.put ("android", AppiumBy.accessibilityId ("pageTitle"));
 //        return pageTitleWebelements;
 //    }
 //    public void getPageTitle () {
 //        if(DriverManager.getPlatform ().equals ("web")) {
-//            getDriver ().findElement (pageTitle ().get ("Web")).getText ();
+//            getDriver ().findElement (pageTitle ().get ("web")).getText ();
 //        } else {
-//            getDriver ().findElement (pageTitle ().get ("android")).getText ();
+//            getDriver ().findElement (pageTitle ().get ("mobile")).getText ();
 //        }
 //    }
 

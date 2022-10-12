@@ -10,7 +10,6 @@ import static io.github.mfaisalkhatri.pages.ProductDetailPage.productDetailPage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import drivers.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
@@ -21,16 +20,16 @@ public class StepDefinitions {
     private String productTitle;
     private String productPrice;
 
-    @Before ("@chrome")
+    @Before ("@web")
     public static void setUp () {
         createChromeDriver ();
         getDriver ().get ("https://www.amazon.in");
     }
 
-    @Before ("@mobile")
-    public static void mobileSetup () {
-        createAndroidDriver ();
-    }
+//    @Before ("@android")
+//    public static void mobileSetup () {
+//        createAndroidDriver ();
+//    }
 
     @Given ("I search for {string} Mobile")
     public void i_search_for_mobile (String mobile) {
@@ -42,7 +41,7 @@ public class StepDefinitions {
         String expectedTitle;
         String expectedPrice;
         assertEquals (
-            "Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage) with No Cost EMI & Additional Exchange Offers",
+            "Samsung Galaxy S20 FE 5G (Cloud Mint, 8GB RAM, 128GB Storage)",
             mainPage ().getMobilePhoneTitle ());
         assertEquals ("29,990", mainPage ().getMobilePhonePrice ());
         expectedTitle = mainPage ().getMobilePhoneTitle ();
@@ -79,9 +78,9 @@ public class StepDefinitions {
         quitDriver ();
     }
 
-    @After ("@android")
-    public static void closeSession () {
-        quitSession ();
-    }
+//    @After ("@android")
+//    public static void closeSession () {
+//        quitSession ();
+//    }
 }
 
