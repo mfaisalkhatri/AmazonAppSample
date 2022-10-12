@@ -11,6 +11,10 @@ import org.openqa.selenium.WebElement;
  **/
 public class ProductDetailPage {
 
+    public static ProductDetailPage productDetailPage () {
+        return new ProductDetailPage ();
+    }
+
     public String getProductPrice () {
         return getDriver ().findElement (By.cssSelector ("h5 > div:nth-child(2) > div > span.a-color-price"))
             .getText ().trim ();

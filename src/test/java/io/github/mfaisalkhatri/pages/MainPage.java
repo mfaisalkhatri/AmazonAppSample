@@ -15,6 +15,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  **/
 public class MainPage {
 
+    public static MainPage mainPage() {
+        return new MainPage ();
+    }
     public WebElement searchBox () {
         return getDriver ().findElement (By.id ("twotabsearchtextbox"));
     }
